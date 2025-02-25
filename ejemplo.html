@@ -1,14 +1,131 @@
-<div class="d-flex w-100 row m-0">
-    <div class="col-lg-3 col-md-6 p-0" style="height: 30vh;">
-      <img src="img/ImagenesEventoXV.jpg" class="h-100 w-100" alt="">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Visor de PDF</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+        <div id="pdfContainer" style="text-align: center;"></div> <!-- Contenedor centrado -->
+      </div>
     </div>
-    <div class="col-lg-3 col-md-6 p-0" style="height: 30vh;">
-      <img src="img/Imagen2.jpeg" class="h-100 w-100" alt="">
-    </div>
-    <div class="col-lg-3 col-md-6  p-0" style="height: 30vh;">
-      <img src="img/Imagen3.jpeg" class="h-100 w-100" alt="">
-    </div>
-    <div class="col-lg-3 col-md-6 p-0" style="height: 30vh;">
-      <img src="img/Imagen4.jpeg" class="h-100 w-100" alt="">
-    </div>
-   </div>
+  </div>
+</div>
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("exampleModal");
+
+  modal.addEventListener("shown.bs.modal", function () {
+    var pdfURL = "pdf/BANQUETE GOURMET REAL ROJAS.pdf"; // Cambia la URL
+    cargarPDF(pdfURL);
+  });
+
+  modal.addEventListener("hidden.bs.modal", function () {
+    document.getElementById("pdfContainer").innerHTML = ""; // Limpia el contenido al cerrar
+  });
+});
+
+function cargarPDF(url) {
+  var container = document.getElementById("pdfContainer");
+
+  pdfjsLib.getDocument(url).promise.then(function (pdf) {
+    container.innerHTML = ""; // Limpiar antes de cargar
+
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      pdf.getPage(pageNum).then(function (page) {
+        var viewport = page.getViewport({ scale: 1 });
+
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+
+        // Ajustar tamaño al 100% del modal
+        var modalWidth = container.clientWidth; 
+        var scale = modalWidth / viewport.width; 
+        var scaledViewport = page.getViewport({ scale: scale });
+
+        canvas.width = scaledViewport.width;
+        canvas.height = scaledViewport.height;
+        canvas.style.maxWidth = "100%"; // Asegura que se ajuste al modal
+        canvas.style.height = "auto"; // Mantiene proporción
+
+        container.appendChild(canvas);
+
+        var renderContext = { canvasContext: ctx, viewport: scaledViewport };
+        page.render(renderContext);
+      });
+    }
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function cargarPDF(tipo) {
+  console.log("Cambiando PDF a:", tipo); // Debugging
+  if (pdfActual === tipo) return; // Si ya está cargado, no hacer nada
+
+  pdfActual = tipo; // Guardar el PDF actual
+  var url = pdfs[tipo];
+
+  // 🔥 Reiniciar el contenedor sin que el scroll salte
+  pdfContainer.innerHTML = "";
+  pdfContainer.style.overflow = "hidden"; // Bloquear scroll temporalmente
+  pdfContainer.scrollTop = 0; // Forzar al inicio
+
+  // 🔥 Esperar un pequeño tiempo para resetear el scroll completamente
+  setTimeout(() => {
+    pdfContainer.style.overflow = "auto"; // Restaurar el scroll normal
+  }, 100); 
+
+  // Cambiar estilos de los botones
+  btnGourmet.classList.toggle("btn-primary", tipo === "gourmet");
+  btnGourmet.classList.toggle("btn-outline-primary", tipo !== "gourmet");
+  btnClasico.classList.toggle("btn-primary", tipo === "clasico");
+  btnClasico.classList.toggle("btn-outline-primary", tipo !== "clasico");
+
+  // Cargar y renderizar todas las páginas del PDF
+  pdfjsLib.getDocument(url).promise.then(function (pdf) {
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      pdf.getPage(pageNum).then(function (page) {
+        var viewport = page.getViewport({ scale: 1 });
+
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+
+        // Ajustar tamaño dinámicamente al modal
+        var modalWidth = pdfContainer.clientWidth; 
+        var scale = modalWidth / viewport.width; 
+        var scaledViewport = page.getViewport({ scale: scale});
+
+        canvas.width = scaledViewport.width;
+        canvas.height = scaledViewport.height;
+        canvas.style.maxWidth = "100%"; 
+        canvas.style.height = "auto"; 
+        canvas.style.marginBottom = "10px"; // Espacio entre páginas
+
+        pdfContainer.appendChild(canvas);
+
+        var renderContext = { canvasContext: ctx, viewport: scaledViewport };
+        page.render(renderContext);
+      });
+    }
+  });
+}
+
