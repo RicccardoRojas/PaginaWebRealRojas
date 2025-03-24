@@ -77,126 +77,40 @@
     
     <!-- Acerca de Nosotros -->
     <section id="about" class="about-us-section">
-        <div class="container py-5">
+      <div class="container py-5">
           <div class="row text-center">
-            <div class="col-12">
-              <h2 class="section-title mb-4">Acerca de Nosotros</h2>
-              <p class="lead text-muted">En <strong>Salón de Eventos Real Rojas</strong>, ofrecemos un espacio único y personalizado para cualquier ocasión especial. Nos enorgullece crear experiencias memorables para bodas, reuniones, fiestas y más.</p>
-            </div>
+              <div class="col-12">
+                  <h2 class="section-title mb-4">Acerca de Nosotros</h2>
+                  <p class="lead text-muted">
+                      En <strong>Salón de Eventos Real Rojas</strong>, ofrecemos un espacio único y personalizado para cualquier ocasión especial. 
+                      Nos enorgullece crear experiencias memorables para bodas, reuniones, fiestas y más.
+                  </p>
+              </div>
           </div>
-      
-          <div class="row mt-5">
-            <!-- Nuestro Espacio -->
-            <div class="col-lg-4 col-md-6 text-center mb-4">
-                <div class="service-card shadow p-4 rounded">
-                    <div class="service-icon mb-3">
-                        <i class="bi bi-gem" style="font-size: 3rem; color: #f39c12;"></i>
-                    </div>
-                    <h4 class="service-title mb-2">Nuestro Espacio</h4>
-                    <p class="text-muted" style="height: 100px;">Brindamos el mejor espacio para eventos con atención especial y personalizada, asegurando que cada cliente tenga una experiencia única y satisfactoria.</p>
-                    
-                    <!-- Imagen dentro de la card -->
-                    <div class="img-container mb-3">
-                        <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404338/Nuestro_Espacio_wdvjc3.jpg" alt="Nuestro salón de eventos" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Tu Evento, Nuestra Prioridad -->
-            <div class="col-lg-4 col-md-6 text-center mb-4">
-                <div class="service-card shadow p-4 rounded">
-                    <div class="service-icon mb-3">
-                        <i class="bi bi-eye" style="font-size: 3rem; color: #1abc9c;"></i>
-                    </div>
-                    <h4 class="service-title mb-2">Nuestra Prioridad</h4>
-                    <p class="text-muted" style="height: 100px;">Desde el primer momento, nos dedicamos a entender tus necesidades y asegurarnos de que todo salga perfecto, brindando un ambiente único para ti y tus invitados.</p>
-            
-                    <!-- Imagen dentro de la card -->
-                    <div class="img-container mb-3">
-                        <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404341/Tu_evento_nuestra_prioridad_k6odn2.jpg" alt="Nuestro salón de eventos" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Ambiente & Estilo -->
-            <div class="col-lg-4 col-md-6 text-center mb-4">
-                <div class="service-card shadow p-4 rounded">
-                    <div class="service-icon mb-3">
-                        <i class="bi bi-eye" style="font-size: 3rem; color: #1abc9c;"></i>
-                    </div>
-                    <h4 class="service-title mb-2">Ambiente & Estilo</h4>
-                    <p class="text-muted" style="height: 100px;">Desde el primer contacto, nos enfocamos en crear un ambiente único. Cada detalle está cuidadosamente pensado para ofrecerte una experiencia excepcional.</p>
-
-                    <!-- Imagen dentro de la card -->
-                    <div class="img-container mb-3">
-                        <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404327/Ambiente_y_Estilo_agcyjc.jpg" alt="Nuestro salón de eventos" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
-                    </div>
-                </div>
-            </div>
-
-
+  
+          <div id="services-container" class="row mt-5">
+              <!-- Aquí se generarán dinámicamente las tarjetas con JavaScript -->
           </div>
-        </div>
-      </section>
+      </div>
+  </section>
+  
       
       <!-- Servicios -->
-      <section id="services" class="services-section bg-light py-5">
+      <section id="servicios" class="services-section bg-light py-5">
         <div class="container">
-          <div class="row text-center mb-2">
-            <div class="col-12">
-              <h2 class="section-title mb-4">Servicios Ofrecidos</h2>
-              <p class="lead text-muted" >Contamos con un amplio rango de servicios diseñados para hacer de tu evento una ocasión memorable. Descubre lo que podemos ofrecerte.</p>
-            </div>
-          </div>
-      
-          <div class="row">
-            <!-- Servicio 1: Banquete -->
-            <div class="col-lg-4 col-md-6 mb-4" onclick="abrirModal('exampleModal', 'gourmet')">
-              <div class="service-card shadow p-4 rounded">
-                <div class="service-icon mb-3">
-                  <i class="bi bi-patch-check" style="font-size: 3rem; color: #3498db;"></i>
+            <div class="row text-center mb-2">
+                <div class="col-12">
+                    <h2 class="section-title mb-4">Servicios Ofrecidos</h2>
+                    <p class="lead text-muted">Contamos con un amplio rango de servicios diseñados para hacer de tu evento una ocasión memorable. Descubre lo que podemos ofrecerte.</p>
                 </div>
-                <h4 class="service-title mb-2">Banquete</h4>
-                <p class="text-muted" style="height: 100px;">Ofrecemos menús personalizados para que tu evento cuente con los mejores platillos, adaptados a las necesidades de tus invitados.</p>
-              
-                <div class="img-container mb-3">
-                  <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404329/BANQUETES_jpjlmr.jpg" alt="Nuestro salón de eventos" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
-              </div>
-              </div>
             </div>
-      
-            <!-- Servicio 2: Decoración -->
-            <div class="col-lg-4 col-md-6 mb-4" onclick="abrirModal('modalsensillo', 'mobiliario')">
-              <div class="service-card shadow p-4 rounded">
-                <div class="service-icon mb-3">
-                  <i class="bi bi-emoji-heart-eyes" style="font-size: 3rem; color: #9b59b6;"></i>
-                </div>
-                <h4 class="service-title mb-2">Mobiliario</h4>
-                <p class="text-muted" style="height: 100px;">Ofrecemos mobiliario elegante y versátil que se adapta a cualquier tipo de evento. Desde mesas y sillas sofisticadas hasta mobiliario accesible y de calidad.</p>
-
-                <div class="img-container mb-3">
-                  <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404336/Mobiliario_zfwacd.jpg" alt="Nuestro salón de eventos" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
-              </div>
-              </div>
+    
+            <div id="servicios-container" class="row">
+                <!-- Aquí se generarán dinámicamente las tarjetas con JavaScript -->
             </div>
-      
-            <!-- Servicio 3: Sonido e Iluminación -->
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="service-card shadow p-4 rounded">
-                <div class="service-icon mb-3">
-                  <i class="bi bi-music-note-beamed" style="font-size: 3rem; color: #f1c40f;"></i>
-                </div>
-                <h4 class="service-title mb-2">Sonido e Iluminación</h4>
-                <p class="text-muted" style="height: 100px;">Proporcionamos equipos de sonido e iluminación de última generación para crear el ambiente perfecto durante tu evento.</p>
-              
-                <div class="img-container mb-3" >
-                  <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404339/Sonido_s3g7vv.jpg" alt="Nuestro salón de eventos" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
-              </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
+    
       
       <!-- Imagenes -->
 
@@ -211,132 +125,60 @@
 
       <div id="carouselExampleCaptions" class="carousel slide" style="height: 75vh !important;">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <script>
+                const images = [
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407034/Casino/vdmunxuip8m9hnavc1gj.jpg", title: "XV Años", desc: "Una celebración vibrante y personalizada, decorada con detalles únicos elegidos por el cliente para crear un ambiente mágico e inolvidable." },
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407034/Casino/ajvvngoxnmc25eprkmhx.jpg", title: "XV Años - 2", desc: "El centro del casino decorado y ambientado con detalles sutiles que reflejan la personalidad del cliente." },
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg", title: "XV Años - 3", desc: "Ubicación de los invitados en el área del jardín, un lugar con aire fresco y luz natural." },
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407035/Casino/nnyprmpfdzzvvmtpqtz4.jpg", title: "XV Años", desc: "Una celebración mágica, llena de alegría, con una decoración deslumbrante y cada detalle pensado para hacer de este momento algo único y especial." },
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407035/Casino/tbpetftr63ckegitqnyc.jpg", title: "XV Años - 2", desc: "Revive los momentos inolvidables. Una noche llena de emoción, juegos y grandes recuerdos. ¡Gracias por ser parte de esta experiencia única! 🃏✨" },
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg", title: "Boda con Esencia de Fiesta Mexicana", desc: "Una celebración llena de tradición y alegría, con colores vibrantes, decoración artesanal y un ambiente festivo que hizo de este día un momento inolvidable." },
+                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg", title: "Boda con Esencia de Fiesta Mexicana - 2", desc: "Una celebración llena de color, tradición y alegría. Gracias por acompañarnos en esta boda inolvidable, donde el mariachi, la gastronomía y la felicidad fueron los protagonistas." }
+                ];
+                
+                images.forEach((_, index) => {
+                    document.write(`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>`);
+                });
+            </script>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/vdmunxuip8m9hnavc1gj.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>XV Años</h5>
-              <p>Una celebración vibrante y personalizada, decorada con detalles únicos elegidos por el cliente para crear un ambiente mágico e inolvidable.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/ajvvngoxnmc25eprkmhx.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>XV Años - 2</h5>  
-              <p>El centro del casino decorado y ambientado con detalles sutiles que reflejan la personalidad del cliente.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>XV Años - 3</h5>  
-              <p>Ubicación de los invitados en el área del jardín, un lugar con aire fresco y luz natural.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/nnyprmpfdzzvvmtpqtz4.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>XV Años</h5>  
-              <p>Una celebración mágica, llena de alegría, con una decoración deslumbrante y cada detalle pensado para hacer de este momento algo único y especial.</p>
-            </div>
-          </div>
-          
-
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/tbpetftr63ckegitqnyc.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>XV Años - 2</h5>
-              <p>Revive los momentos inolvidables. Una noche llena de emoción, juegos y grandes recuerdos. ¡Gracias por ser parte de esta experiencia única! 🃏✨</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Boda con Esencia de Fiesta Mexicana</h5>  
-              <p>Una celebración llena de tradición y alegría, con colores vibrantes, decoración artesanal y un ambiente festivo que hizo de este día un momento inolvidable.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Boda con Esencia de Fiesta Mexicana - 2</h5>
-              <p>Una celebración llena de color, tradición y alegría. Gracias por acompañarnos en esta boda inolvidable, donde el mariachi, la gastronomía y la felicidad fueron los protagonistas.</p>
-            </div>
-          </div>
+            <script>
+                images.forEach((img, index) => {
+                    document.write(`
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                            <img src="${img.src}" class="d-block w-100" alt="${img.title}" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>${img.title}</h5>
+                                <p>${img.desc}</p>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
         </div>
-
-        
-
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
-      </div>
+    </div>
+    
 
       <!-- Secciones -->
 
       <div id="secciones" class="container mt-5 mb-3">
         <div class="row text-center mb-2">
-          <div class="col-12">
-            <h2 class="section-title mb-4">Secciones</h2>
-            <p class="lead text-muted">Descubre espacios vibrantes y versátiles, diseñados para adaptarse perfectamente a tu evento y hacer de cada momento una experiencia memorable.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2 w-100 m-0 g-0 text-center" onclick="abrirModalImagenes()">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="seccion bg-jardin">
-                <h3>Jardín</h3>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="seccion bg-cocina">
-                <h3>Cocina</h3>
-            </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4">
-            <div class="seccion bg-banos">
-                <h3>Baños</h3>
+            <div class="col-12">
+                <h2 class="section-title mb-4">Secciones</h2>
+                <p class="lead text-muted">Descubre espacios vibrantes y versátiles, diseñados para adaptarse perfectamente a tu evento y hacer de cada momento una experiencia memorable.</p>
             </div>
         </div>
     </div>
     
-    <div class="row w-100 m-0 g-0 text-center">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="seccion bg-casino">
-                <h3>Casino</h3>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="seccion bg-estacionamiento">
-                <h3>Estacionamiento</h3>
-            </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4">
-            <div class="seccion bg-palapas">
-                <h3>Palapas</h3>
-            </div>
-        </div>
-    </div>
-    
+    <div id="secciones-container" class="row w-100 m-0 g-0 text-center"></div>
     
     
     
@@ -389,7 +231,7 @@
               <div class="modal-body d-flex flex-column align-items-center justify-content-center modalsize">
                   <!-- Imagen Principal -->
                   <div class="text-center w-100">
-                      <img id="imagenPrincipal" src="img/Imagen3.jpeg" alt="Mobiliario" 
+                      <img id="imagenPrincipal" src="https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg" alt="Mobiliario" 
                            class="img-fluid d-block mx-auto" 
                            style="max-width: 100%;  object-fit: contain;">
                   </div>
@@ -402,7 +244,7 @@
                       </button>
   
                       <div class="d-flex justify-content-start gap-2 flex-nowrap miniaturas-container mt-1 mb-1">
-                          <img id="mini1" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404329/CASINO-BG_rradyo.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini1')">
+                          <img id="mini1" src="https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini1')">
                           <img id="mini2" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/ajvvngoxnmc25eprkmhx.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini2')">
                           <img id="mini3" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/vdmunxuip8m9hnavc1gj.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini3')">
                           <img id="mini4" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini4')">

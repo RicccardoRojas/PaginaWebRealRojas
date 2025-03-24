@@ -272,10 +272,11 @@ html {
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   z-index: 1;
 }
 
+/* Capa de oscurecimiento */
 .seccion::after {
   content: "";
   position: absolute;
@@ -283,23 +284,31 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Oscurece la imagen con 50% de opacidad */
-  z-index: 1; /* Coloca la capa oscura sobre la imagen pero debajo del texto */
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
-
 
 /* Efecto hover: agranda la imagen */
 .seccion:hover::before {
   transform: scale(1.1);
 }
 
+/* Asegura que el texto esté sobre la imagen */
+.seccion h3 {
+  position: relative;
+  z-index: 3;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 /* Específicas imágenes de cada sección */
-.bg-jardin::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404335/JARDIN-BG_lrzl5j.jpg'); }
-.bg-cocina::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404333/COCINA-BG_z89jqp.jpg'); }
-.bg-banos::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404340/BANO-BG_xz7dfk.jpg'); }
-.bg-casino::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404329/CASINO-BG_rradyo.jpg'); }
-.bg-estacionamiento::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404331/ESTACIONAMIENTO-BG_fnsooe.jpg'); }
-.bg-palapas::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404338/PALAPAS-BG_rk1skx.jpg'); }
+.bg-jardin::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404335/JARDIN-BG_lrzl5j.jpg'); }
+.bg-cocina::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404333/COCINA-BG_z89jqp.jpg'); }
+.bg-banos::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404340/BANO-BG_xz7dfk.jpg'); }
+.bg-casino::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg'); }
+.bg-estacionamiento::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404331/ESTACIONAMIENTO-BG_fnsooe.jpg'); }
+.bg-palapas::before { background-image: url('https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404338/PALAPAS-BG_rk1skx.jpg'); }
+
 
 
 .loader-container {
@@ -323,9 +332,6 @@ html {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-
-
 
 
 
@@ -443,4 +449,14 @@ html {
 .modalsize {
   height: auto !important;
   width: auto !important;
+}
+
+
+.service-card img {
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
+}
+.service-icon i {
+  font-size: 3rem;
 }

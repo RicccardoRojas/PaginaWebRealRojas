@@ -161,3 +161,180 @@ function desplazarMiniaturas(direccion) {
     contenedor.scrollBy({ left: direccion * desplazamiento, behavior: "smooth" });
 }
 
+const services = [
+    {
+        title: "Nuestro Espacio",
+        description: "Brindamos el mejor espacio para eventos con atención especial y personalizada, asegurando que cada cliente tenga una experiencia única y satisfactoria.",
+        icon: "bi-gem",
+        color: "#f39c12",
+        image: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404338/Nuestro_Espacio_wdvjc3.jpg"
+    },
+    {
+        title: "Nuestra Prioridad",
+        description: "Desde el primer momento, nos dedicamos a entender tus necesidades y asegurarnos de que todo salga perfecto, brindando un ambiente único para ti y tus invitados.",
+        icon: "bi-eye",
+        color: "#1abc9c",
+        image: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404341/Tu_evento_nuestra_prioridad_k6odn2.jpg"
+    },
+    {
+        title: "Ambiente & Estilo",
+        description: "Desde el primer contacto, nos enfocamos en crear un ambiente único. Cada detalle está cuidadosamente pensado para ofrecerte una experiencia excepcional.",
+        icon: "bi-brush",
+        color: "#e74c3c",
+        image: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404327/Ambiente_y_Estilo_agcyjc.jpg"
+    }
+];
+
+const container = document.getElementById("services-container");
+
+services.forEach(service => {
+    const card = `
+        <div class="col-lg-4 col-md-6 text-center mb-4">
+            <div class="service-card shadow p-4 rounded">
+                <div class="service-icon mb-3">
+                    <i class="bi ${service.icon}" style="font-size: 3rem; color: ${service.color};"></i>
+                </div>
+                <h4 class="service-title mb-2">${service.title}</h4>
+                <p class="text-muted">${service.description}</p>
+                <div class="img-container mb-3">
+                    <img src="${service.image}" alt="${service.title}" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    `;
+    container.innerHTML += card;
+});
+
+
+const servicios = [
+    {
+        titulo: "Banquete",
+        descripcion: "Ofrecemos menús personalizados para que tu evento cuente con los mejores platillos, adaptados a las necesidades de tus invitados.",
+        icono: "bi-patch-check",
+        color: "#3498db",
+        imagen: "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404329/BANQUETES_jpjlmr.jpg",
+        modalId: "exampleModal",
+        modalData: "gourmet"
+    },
+    {
+        titulo: "Mobiliario",
+        descripcion: "Ofrecemos mobiliario elegante y versátil que se adapta a cualquier tipo de evento. Desde mesas y sillas sofisticadas hasta mobiliario accesible y de calidad.",
+        icono: "bi-emoji-heart-eyes",
+        color: "#9b59b6",
+        imagen: "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404336/Mobiliario_zfwacd.jpg",
+        modalId: "modalsensillo",
+        modalData: "mobiliario"
+    },
+    {
+        titulo: "Sonido e Iluminación",
+        descripcion: "Proporcionamos equipos de sonido e iluminación de última generación para crear el ambiente perfecto durante tu evento.",
+        icono: "bi-music-note-beamed",
+        color: "#f1c40f",
+        imagen: "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742404339/Sonido_s3g7vv.jpg"
+    }
+];
+
+const serviciosContainer = document.getElementById("servicios-container");
+
+servicios.forEach(servicio => {
+    const onclickAttribute = servicio.modalId ? `onclick="abrirModal('${servicio.modalId}', '${servicio.modalData}')"` : "";
+    
+    const card = `
+        <div class="col-lg-4 col-md-6 mb-4" ${onclickAttribute}>
+            <div class="service-card shadow p-4 rounded">
+                <div class="service-icon mb-3">
+                    <i class="bi ${servicio.icono}" style="font-size: 3rem; color: ${servicio.color};"></i>
+                </div>
+                <h4 class="service-title mb-2">${servicio.titulo}</h4>
+                <p class="text-muted" style="height: 100px;">${servicio.descripcion}</p>
+                <div class="img-container mb-3">
+                    <img src="${servicio.imagen}" alt="${servicio.titulo}" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
+                </div>
+            </div>
+        </div>
+    `;
+
+    serviciosContainer.innerHTML += card;
+});
+
+
+
+const imagenesCasino = [
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/ajvvngoxnmc25eprkmhx.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/vdmunxuip8m9hnavc1gj.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/nnyprmpfdzzvvmtpqtz4.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/tbpetftr63ckegitqnyc.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg"
+];
+
+function abrirModalImagenes(seccion) {
+    console.log("Abriendo modal de:", seccion); // Verifica si se ejecuta
+
+    const modalElement = document.getElementById("modalfotos");
+    if (!modalElement) {
+        console.error("El modal no existe en el DOM");
+        return;
+    }
+
+    // Mostrar la primera imagen
+    document.getElementById("imagenPrincipal").src = imagenesCasino[0];
+
+    // Llenar miniaturas
+    const miniaturasContainer = document.querySelector(".miniaturas-container");
+    miniaturasContainer.innerHTML = ""; // Limpiar miniaturas antes de agregar nuevas
+
+    imagenesCasino.forEach((imagen, index) => {
+        const img = document.createElement("img");
+        img.src = imagen;
+        img.className = "img-thumbnail miniatura";
+        img.onclick = () => cambiarImagen(img);
+        miniaturasContainer.appendChild(img);
+    });
+
+    // Mostrar modal
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+}
+
+
+function cambiarImagen(img) {
+    document.getElementById("imagenPrincipal").src = img.src;
+}
+
+function desplazarMiniaturas(direccion) {
+    document.getElementById("miniaturas").scrollBy({ left: direccion * 100, behavior: "smooth" });
+}
+
+
+
+const secciones = [
+    { nombre: "Jardín", clase: "bg-jardin" },
+    { nombre: "Cocina", clase: "bg-cocina" },
+    { nombre: "Baños", clase: "bg-banos" },
+    { nombre: "Casino", clase: "bg-casino" },
+    { nombre: "Estacionamiento", clase: "bg-estacionamiento" },
+    { nombre: "Palapas", clase: "bg-palapas" }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const containersecc = document.getElementById("secciones-container");
+
+    secciones.forEach((seccion, index) => {
+        const colClass = index % 3 === 0 ? "col-12 col-md-12 col-lg-4" : "col-12 col-md-6 col-lg-4";
+        const div = document.createElement("div");
+        div.className = `${colClass}`;
+        div.innerHTML = `
+            <div class="seccion ${seccion.clase}">
+                <h3>${seccion.nombre}</h3>
+            </div>
+        `;
+
+        // Asignar evento manualmente
+        div.querySelector(".seccion").addEventListener("click", () => abrirModalImagenes(seccion.nombre));
+
+        containersecc.appendChild(div);
+    });
+});
