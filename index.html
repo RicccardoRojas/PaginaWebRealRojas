@@ -222,48 +222,40 @@
 
 
     <div class="modal fade" id="modalfotos" tabindex="-1" aria-labelledby="modalfotosLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
-              <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="modalfotosLabel">Imágenes</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalfotosLabel">Imágenes</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center justify-content-center modalsize">
+              <!-- Imagen Principal -->
+              <div class="text-center w-100 mb-2">
+                <img id="imagenPrincipal" src="https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg" alt="Mobiliario" 
+                     class="img-fluid d-block mx-auto" 
+                     style="max-width: 100%; max-height: 70vh; object-fit: contain;">
               </div>
-              <div class="modal-body d-flex flex-column align-items-center justify-content-center modalsize">
-                  <!-- Imagen Principal -->
-                  <div class="text-center w-100">
-                      <img id="imagenPrincipal" src="https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg" alt="Mobiliario" 
-                           class="img-fluid d-block mx-auto" 
-                           style="max-width: 100%;  object-fit: contain;">
-                  </div>
-  
-                  <!-- Miniaturas con Flechas -->
-                  <div class="d-flex align-items-center mt-2 position-relative" style="width: 100%; max-width: 600px;">
-                      <!-- Flecha Izquierda -->
-                      <button class="btn btn-light flecha" id="flechaIzquierda" onclick="desplazarMiniaturas(-1)">
-                          &#10094;
-                      </button>
-  
-                      <div class="d-flex justify-content-start gap-2 flex-nowrap miniaturas-container mt-1 mb-1">
-                          <img id="mini1" src="https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742404329/CASINO-BG_rradyo.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini1')">
-                          <img id="mini2" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/ajvvngoxnmc25eprkmhx.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini2')">
-                          <img id="mini3" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407034/Casino/vdmunxuip8m9hnavc1gj.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini3')">
-                          <img id="mini4" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini4')">
-                          <img id="mini5" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/nnyprmpfdzzvvmtpqtz4.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini5')">
-                          <img id="mini6" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/tbpetftr63ckegitqnyc.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini6')">
-                          <img id="mini7" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini7')">
-                          <img id="mini8" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini8')">
-                          <img id="mini9" src="https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg" class="img-thumbnail miniatura" onclick="cambiarImagen(this, 'mini9')">
-                      </div>
-  
-                      <!-- Flecha Derecha -->
-                      <button class="btn btn-light flecha" id="flechaDerecha" onclick="desplazarMiniaturas(1)">
-                          &#10095;
-                      </button>
-                  </div>
+      
+              <!-- Miniaturas con Flechas -->
+              <div class="d-flex align-items-center justify-content-center w-100">
+                <!-- Flecha Izquierda -->
+                <button class="btn btn-light flecha me-2" id="flechaIzquierda">
+                  &#10094;
+                </button>
+      
+                <div class="miniaturas-container mb-2">
+                  
+                </div>
+      
+                <!-- Flecha Derecha -->
+                <button class="btn btn-light flecha ms-2" id="flechaDerecha">
+                  &#10095;
+                </button>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
   
   <div class="d-flex align-items-center justify-content-center">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.5506664226414!2d-101.89365882386531!3d21.36821177603138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bd3de3e19c8a1%3A0x97567e05f12e618f!2sReal%20Rojas!5e0!3m2!1ses-419!2smx!4v1738794782923!5m2!1ses-419!2smx" width="90%" height="45%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 

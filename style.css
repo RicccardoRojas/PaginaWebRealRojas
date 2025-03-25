@@ -335,6 +335,7 @@ html {
 
 
 
+/* Estilos para las miniaturas */
 .miniatura {
   width: 70px;
   height: 70px;
@@ -342,6 +343,8 @@ html {
   cursor: pointer;
   border-radius: 8px;
   transition: transform 0.2s, border 0.2s;
+  margin: 0 5px;
+  flex-shrink: 0;
 }
 
 .miniatura:hover {
@@ -353,34 +356,23 @@ html {
   border: 3px solid #007bff;
 }
 
-/* Contenedor de miniaturas con desplazamiento y flechas */
-.miniaturas-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 90%;
-}
-
+/* Contenedor de miniaturas */
 .miniaturas-container {
   display: flex;
   overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  max-width: 80%;
-  padding: 5px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para IE y Edge */
+  max-width: calc(100% - 100px); /* Ajusta según el espacio de las flechas */
+  padding: 5px;
 }
 
 .miniaturas-container::-webkit-scrollbar {
-  display: none;
+  display: none; /* Para Chrome, Safari y Opera */
 }
 
 /* Flechas de navegación */
 .flecha {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -393,70 +385,62 @@ html {
   font-size: 18px;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
+  z-index: 1;
 }
 
 .flecha:hover {
   background: rgba(0, 0, 0, 0.8);
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.1);
 }
 
-#flechaIzquierda {
-  left: -45px;
-}
-
-#flechaDerecha {
-  right: -45px;
-}
-
-@media (max-width: 1024px) { /* Tablets y móviles grandes */
-  .modal-dialog {
-      max-width: 90vw !important;
-  }
-  #imagenPrincipal {
-      max-height: 50vh !important; /* Reduce altura en tablets */
-  }
-}
-
-@media (max-width: 768px) { /* Móviles */
-  .modal-dialog {
-      max-width: 95vw !important;
-      max-height: 55vh !important;
-  }
-  #imagenPrincipal {
-      max-height: 40vh !important; /* Reduce altura en móviles */
-  }
-  .miniaturas-wrapper {
-      max-width: 100%;
-  }
-  .miniaturas-container {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      width: 100%;
-      padding-bottom: 5px;
-  }
+/* Estilos responsivos */
+@media (max-width: 768px) {
   .miniatura {
-      width: 60px;
-      height: 60px;
-      flex-shrink: 0;
+    width: 50px;
+    height: 50px;
   }
+  
   .flecha {
-      width: 30px;
-      height: 30px;
-      font-size: 16px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  #imagenPrincipal {
+    max-height: 50vh !important;
   }
 }
 
 .modalsize {
-  height: auto !important;
-  width: auto !important;
+  height: auto;
+  width: auto;
 }
 
-
-.service-card img {
-  object-fit: cover;
-  height: 500px;
-  width: 100%;
+/* Estilo para miniatura seleccionada */
+.miniatura.seleccionada {
+  border: 3px solid #007bff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
-.service-icon i {
-  font-size: 3rem;
+
+/* Asegurar que las flechas sean visibles */
+.flecha {
+  display: flex !important; /* Sobreescribe cualquier display: none */
+  z-index: 10;
+  position: static; /* Cambia esto si necesitas posición absoluta */
+  transform: none; /* Elimina transformaciones que puedan afectar */
+  margin: 0 5px; /* Espaciado entre flechas y miniaturas */
+}
+
+/* Contenedor de miniaturas */
+.miniaturas-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.miniaturas-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
 }

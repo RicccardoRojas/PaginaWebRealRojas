@@ -267,11 +267,13 @@ const imagenesCasino = [
     "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/nnyprmpfdzzvvmtpqtz4.jpg",
     "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407035/Casino/tbpetftr63ckegitqnyc.jpg",
     "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg",
+    "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg",
     "https://res.cloudinary.com/dmkdf6q30/image/upload/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg"
 ];
 
 function abrirModalImagenes(seccion) {
-    console.log("Abriendo modal de:", seccion); // Verifica si se ejecuta
+    console.log("Abriendo modal de:", seccion);
 
     const modalElement = document.getElementById("modalfotos");
     if (!modalElement) {
@@ -280,32 +282,87 @@ function abrirModalImagenes(seccion) {
     }
 
     // Mostrar la primera imagen
-    document.getElementById("imagenPrincipal").src = imagenesCasino[0];
+    const imagenPrincipal = document.getElementById("imagenPrincipal");
+    imagenPrincipal.src = imagenesCasino[0];
 
     // Llenar miniaturas
     const miniaturasContainer = document.querySelector(".miniaturas-container");
-    miniaturasContainer.innerHTML = ""; // Limpiar miniaturas antes de agregar nuevas
+    miniaturasContainer.innerHTML = "";
 
     imagenesCasino.forEach((imagen, index) => {
         const img = document.createElement("img");
         img.src = imagen;
         img.className = "img-thumbnail miniatura";
-        img.onclick = () => cambiarImagen(img);
+        img.alt = `Miniatura ${index + 1}`;
+        
+        // Resaltar la primera miniatura
+        if (index === 0) {
+            img.classList.add("seleccionada");
+        }
+        
+        img.addEventListener("click", () => cambiarImagen(img));
         miniaturasContainer.appendChild(img);
     });
+
+    // Configurar flechas después de crear las miniaturas
+    configurarFlechas();
 
     // Mostrar modal
     const modal = new bootstrap.Modal(modalElement);
     modal.show();
 }
 
-
-function cambiarImagen(img) {
-    document.getElementById("imagenPrincipal").src = img.src;
+function cambiarImagen(imgElement) {
+    // Cambiar imagen principal
+    document.getElementById("imagenPrincipal").src = imgElement.src;
+    
+    // Quitar selección de todas las miniaturas
+    document.querySelectorAll(".miniatura").forEach(miniatura => {
+        miniatura.classList.remove("seleccionada");
+    });
+    
+    // Añadir selección a la miniatura clickeada
+    imgElement.classList.add("seleccionada");
+    
+    // Hacer scroll para que la miniatura sea visible
+    imgElement.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center"
+    });
 }
 
-function desplazarMiniaturas(direccion) {
-    document.getElementById("miniaturas").scrollBy({ left: direccion * 100, behavior: "smooth" });
+function configurarFlechas() {
+    const miniaturasContainer = document.querySelector(".miniaturas-container");
+    const flechaIzquierda = document.getElementById("flechaIzquierda");
+    const flechaDerecha = document.getElementById("flechaDerecha");
+    
+    // Flecha izquierda
+    flechaIzquierda.addEventListener("click", () => {
+        miniaturasContainer.scrollBy({
+            left: -200, // Ajusta este valor según necesidad
+            behavior: "smooth"
+        });
+    });
+    
+    // Flecha derecha
+    flechaDerecha.addEventListener("click", () => {
+        miniaturasContainer.scrollBy({
+            left: 200, // Ajusta este valor según necesidad
+            behavior: "smooth"
+        });
+    });
+    
+    // Ocultar flechas si no hay overflow
+    const checkOverflow = () => {
+        const hasOverflow = miniaturasContainer.scrollWidth > miniaturasContainer.clientWidth;
+        flechaIzquierda.style.display = hasOverflow ? "block" : "none";
+        flechaDerecha.style.display = hasOverflow ? "block" : "none";
+    };
+    
+    // Verificar overflow al cargar y al redimensionar
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
 }
 
 
