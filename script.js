@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
             modal: document.getElementById("exampleModal"),
             pdfContainer: document.getElementById("pdfContainer"),
             pdfs: {
-                gourmet: "https://asset.cloudinary.com/dmkdf6q30/00918b6b8477eb845d58a77e64cdaed5",
-                clasico: "https://asset.cloudinary.com/dmkdf6q30/b7c97d1b82d9aee5b98e2a435ae0d47b"
+                gourmet: "https://res.cloudinary.com/dmkdf6q30/image/upload/v1743016547/Men%C3%BA_Gourmet_-_Noza_m8oiih.pdf",
+                clasico: "https://res.cloudinary.com/dmkdf6q30/image/upload/v1743016538/BANQUETES_REAL_ROJAS_oplcx8.pdf"
             },
             buttons: {
                 gourmet: document.getElementById("btnGourmet"),
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             modal: document.getElementById("modalsensillo"),
             pdfContainer: document.getElementById("pdfContainerSensillo"),
             pdfs: {
-                mobiliario: "https://asset.cloudinary.com/dmkdf6q30/a35df51d66bb7b36d86f61e08ff6805a"
+                mobiliario: "https://res.cloudinary.com/dmkdf6q30/image/upload/v1743016539/MOBILIARIO_REAL_ROJAS_agbvkk.pdf"
             },
             buttons: null // No hay botones en este modal
         }
