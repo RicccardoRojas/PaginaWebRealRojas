@@ -197,7 +197,7 @@ services.forEach(service => {
                 <h4 class="service-title mb-2">${service.title}</h4>
                 <p class="text-muted">${service.description}</p>
                 <div class="img-container mb-3">
-                    <img src="${service.image}" alt="${service.title}" class="img-fluid rounded">
+                    <img src="${service.image}" alt="${service.title}" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
                 </div>
             </div>
         </div>
