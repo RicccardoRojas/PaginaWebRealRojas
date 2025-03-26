@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Optimización de conexiones a recursos externos -->
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    
+    <!-- Hojas de estilo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Encabezado -->
     <title>Casino Real Rojas</title>
     <link rel="icon" href="img/icono.ico" type="image/x-icon">
 </head>
@@ -62,7 +73,7 @@
       <!-- Video de fondo -->
        <!-- src="https://res.cloudinary.com/dmkdf6q30/video/upload/v1742405980/Casino/mvqobjxjou5bx4oea78s.mp4"  -->
       <video 
-          src="https://res.cloudinary.com/dmkdf6q30/video/upload/v1743012782/video_comprimido_SA_yzw7vu.mp4"
+      src="https://res.cloudinary.com/dmkdf6q30/video/upload/f_auto,q_auto/v1743012782/video_comprimido_SA_yzw7vu.mp4"
           class="w-100 h-100 portadacasino" 
           style="object-fit: cover;" 
           autoplay muted loop playsinline 
@@ -125,38 +136,9 @@
       </div>
 
       <div id="carouselExampleCaptions" class="carousel slide" style="height: 75vh !important;">
-        <div class="carousel-indicators">
-            <script>
-                const images = [
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407034/Casino/vdmunxuip8m9hnavc1gj.jpg", title: "XV Años", desc: "Una celebración vibrante y personalizada, decorada con detalles únicos elegidos por el cliente para crear un ambiente mágico e inolvidable." },
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407034/Casino/ajvvngoxnmc25eprkmhx.jpg", title: "XV Años - 2", desc: "El centro del casino decorado y ambientado con detalles sutiles que reflejan la personalidad del cliente." },
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407035/Casino/bsb8kaz5htqb5o7cxe3v.jpg", title: "XV Años - 3", desc: "Ubicación de los invitados en el área del jardín, un lugar con aire fresco y luz natural." },
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407035/Casino/nnyprmpfdzzvvmtpqtz4.jpg", title: "XV Años", desc: "Una celebración mágica, llena de alegría, con una decoración deslumbrante y cada detalle pensado para hacer de este momento algo único y especial." },
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407035/Casino/tbpetftr63ckegitqnyc.jpg", title: "XV Años - 2", desc: "Revive los momentos inolvidables. Una noche llena de emoción, juegos y grandes recuerdos. ¡Gracias por ser parte de esta experiencia única! 🃏✨" },
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407040/Casino/mbbnbjxnlmk2ezw6ueco.jpg", title: "Boda con Esencia de Fiesta Mexicana", desc: "Una celebración llena de tradición y alegría, con colores vibrantes, decoración artesanal y un ambiente festivo que hizo de este día un momento inolvidable." },
-                    { src: "https://res.cloudinary.com/dmkdf6q30/image/upload/f_auto,q_auto/v1742407036/Casino/vztbo9aasbdzok9n1wjb.jpg", title: "Boda con Esencia de Fiesta Mexicana - 2", desc: "Una celebración llena de color, tradición y alegría. Gracias por acompañarnos en esta boda inolvidable, donde el mariachi, la gastronomía y la felicidad fueron los protagonistas." }
-                ];
-                
-                images.forEach((_, index) => {
-                    document.write(`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>`);
-                });
-            </script>
-        </div>
-        <div class="carousel-inner">
-            <script>
-                images.forEach((img, index) => {
-                    document.write(`
-                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                            <img src="${img.src}" class="d-block w-100" alt="${img.title}" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>${img.title}</h5>
-                                <p>${img.desc}</p>
-                            </div>
-                        </div>
-                    `);
-                });
-            </script>
-        </div>
+        <div class="carousel-indicators"></div>
+        <div class="carousel-inner"></div>  
+        
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -166,6 +148,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    
     
 
       <!-- Secciones -->
@@ -181,11 +164,8 @@
     
     <div id="secciones-container" class="row w-100 m-0 g-0 text-center"></div>
     
-    
-    
 
-      <!-- Modal con visor de PDF -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -220,9 +200,10 @@
             </div>
         </div>
     </div>
+    
 
 
-    <div class="modal fade" id="modalfotos" tabindex="-1" aria-labelledby="modalfotosLabel" aria-hidden="true">
+      <div class="modal fade" id="modalfotos" tabindex="-1" aria-labelledby="modalfotosLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -257,17 +238,20 @@
           </div>
         </div>
       </div>
-  
+    
+
   <div class="d-flex align-items-center justify-content-center">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.5506664226414!2d-101.89365882386531!3d21.36821177603138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bd3de3e19c8a1%3A0x97567e05f12e618f!2sReal%20Rojas!5e0!3m2!1ses-419!2smx!4v1738794782923!5m2!1ses-419!2smx" width="90%" height="45%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
   </div>
       
       
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-<!-- Incluir PDF.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js" integrity="sha512-..."></script>
+<!-- Mover scripts al final del body -->
+
+    <!-- Cargar scripts de manera optimizada -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js" defer></script>
+    <script src="JS/script.js" defer></script>
+    <script src="JS/carousel.js" defer></script>
 
 </html>
